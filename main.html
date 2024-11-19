@@ -154,23 +154,26 @@
             </form>
         </section>
         <section id="login">
-            <button id="open-popup" onclick="openLoginForm()">Login</button>
+            <button id="open-popup" onclick="openLoginForm()">Log In</button>
             <button id="logout" style="display: none;" onclick="logoutUser()">Logout</button>
-            <div id="popup-form" class="popup" role="dialog" aria-labelledby="login-title" aria-hidden="true">
+            <div id="popup-form" class="popup" role="dialog" aria-labelledby="form-title" aria-hidden="true">
                 <div class="popup-content">
                     <button id="close-popup" onclick="closeForm()" aria-label="Close">&times;</button>
-                    <h2 id="login-title">Login to Your Account</h2>
-                    <form class="form-container" onsubmit="submitLoginForm(event)">
+                    <h2 id="form-title">Log In</h2>
+                    <form id="auth-form" class="form-container">
                         <label for="username">Username</label>
                         <input type="text" id="username" placeholder="Enter Username" required>
                         
                         <label for="password">Password</label>
                         <input type="password" id="password" placeholder="Enter Password" required>
-        
-                        <button type="submit">Login</button>
+                        
+                        <button type="submit">Submit</button>
                     </form>
+                    <h4>Or</h4>
+                    <button id="toggle-form">Sign Up</button>
                 </div>
             </div>
+            
         </section>        
         <button id="change-color" onclick="changeBackgroundColor()">Change Background Color</button>
     </main>
