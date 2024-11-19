@@ -18,14 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const dropdownMenu = dropdownToggle.nextElementSibling;
 
         if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
-            dropdownToggle.click(); // Opens the dropdown
+            dropdownToggle.click();
             const dropdownItems = dropdownMenu.querySelectorAll('.dropdown-item');
             let dropdownIndex = 0;
 
-            dropdownItems[dropdownIndex].focus(); // Focus the first dropdown item
+            dropdownItems[dropdownIndex].focus();
 
             function dropdownNavigation(event) {
-                dropdownItems.forEach(item => item.style.outline = ''); // Clear outlines
+                dropdownItems.forEach(item => item.style.outline = '');
 
                 if (event.key === 'ArrowDown') {
                     event.preventDefault();
@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     event.preventDefault();
                     dropdownItems[dropdownIndex].click();
                 } else if (event.key === 'Escape') {
-                    dropdownToggle.click(); // Closes the dropdown
+                    dropdownToggle.click();
                     document.removeEventListener('keydown', dropdownNavigation);
-                    focusNavItem(currentIndex); // Return focus to the toggle
+                    focusNavItem(currentIndex);
                     return;
                 }
 
-                dropdownItems[dropdownIndex].style.outline = '2px solid #007bff'; // Add outline
+                dropdownItems[dropdownIndex].style.outline = '2px solid #007bff';
                 dropdownItems[dropdownIndex].focus();
             }
 
